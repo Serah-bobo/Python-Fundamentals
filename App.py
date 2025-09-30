@@ -81,7 +81,7 @@ for i in range(1,10):
         print(i)
 print(f"we have {count} even numbers")
 '''
-#lists are pordered mutable collections
+#lists are ordered mutable collections
 '''
 fruits = ["apple", "banana", "cherry"]
 print(fruits[0])       # apple
@@ -159,6 +159,7 @@ print(student.values())        # All values
 print(student.items())         # Key-value pairs
 print("age" in student)        # Check key existence
 '''
+'''
 #contact book
 contacts = {}
 
@@ -207,3 +208,81 @@ while True:
 
     else:
         print("Invalid choice! Please select 1-5.")
+        '''
+#functions
+#local variables exist only inside a function
+#global variables exist outside a function and can be used inside
+#calculator
+'''
+def add(a,b):
+    return a+b
+
+def subtract(a,b):
+    return a-b
+def multiply(a,b):
+    return a*b
+def divide(a,b):
+    return a/b
+
+print("select operations: 1.add 2.subtract 3.multiply 4.divide 5.exit")
+choice = input("Enter choice (1-5): ")
+num1=float(input("Enter first number: "))
+num2=float(input("Enter second number: "))
+if choice == "1":
+    print(add(num1,num2))
+elif choice == "2":
+    print(subtract(num1,num2))
+elif choice == "3":
+    print(multiply(num1,num2))
+elif choice == "4":
+    print(divide(num1,num2))
+else:
+    print("Invalid choice! Please select 1-5.")
+    '''
+#exceptions
+#1.try/except
+'''
+try:
+    number = int(input("Enter a number: "))
+    print(10 / number)
+except ValueError:
+    print("Invalid input — enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+    '''
+#try/except/finally
+''''
+try:
+    file = open("data.txt", "r")
+    print(file.read())
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    print("End of program.")
+    '''
+#raise
+''''
+def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    return age
+
+try:
+    print(check_age(-5))
+except ValueError as e:
+    print(e)
+    '''
+#writing files
+'''
+file = open("example.txt", "w")
+file.write("Hello world!\n")
+file.write("This is a file operation example.")
+file.close()
+'''
+
+
+
+
+
+
+
